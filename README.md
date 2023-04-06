@@ -1,2 +1,4 @@
-# CG3D-web
-Website for "CLIP goes 3D"
+# Data-Free Sketch-Based Image Retrieval
+Official implementation of Data-Free Sketch-Based Image Retrieval, CVPR 2023.
+
+Code will be released soon.
