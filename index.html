@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         td, th {
+         border: 0px solid black;
+         }
+         img{
+         padding: 5px;
+         }
+      </style>
+      <title>Data-Free Sketch-Based Image Retrieval</title>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <!--  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+         <script>
+           window.dataLayer = window.dataLayer || [];
+         
+           function gtag() {
+             dataLayer.push(arguments);
+           }
+         
+           gtag('js', new Date());
+         
+           gtag('config', 'G-PYVRSFMDRL');
+         
+         
+         
+         </script> -->
+      <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+         rel="stylesheet">
+      <link rel="stylesheet" href="./static/css/bulma.min.css">
+      <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+      <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+      <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+      <link rel="stylesheet"
+         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+      <link rel="stylesheet" href="./static/css/index.css">
+      <link rel="icon" href="./static/images/favicon.svg">
+      <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+      <link rel="stylesheet" href="css/app.css">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script defer src="./static/js/fontawesome.all.min.js"></script>
+      <script src="./static/js/bulma-carousel.min.js"></script>
+      <script src="./static/js/bulma-slider.min.js"></script>
+      <script src="./static/js/index.js"></script>
+   </head>
+   <!-- <body>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <a class="navbar-item" href="https://keunhong.com">
+            <span class="icon">
+                <i class="fas fa-home"></i>
+            </span>
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More Research
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="https://hypernerf.github.io">
+                  HyperNeRF
+                </a>
+                <a class="navbar-item" href="https://nerfies.github.io">
+                  Nerfies
+                </a>
+                <a class="navbar-item" href="https://latentfusion.github.io">
+                  LatentFusion
+                </a>
+                <a class="navbar-item" href="https://photoshape.github.io">
+                  PhotoShape
+                </a>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </nav> -->
+   <section class="hero">
+      <div class="hero-body">
+         <div class="container is-max-desktop">
+            <div class="columns is-centered">
+               <div class="column has-text-centered">
+                  <!-- <h1 class="title is-1 publication-title", style="color:purple;">Picture that Sketch:</h1> -->
+                  <h1 class="title is-1 publication-title">Data-Free Sketch-Based Image Retrieval</h1>
+                  <div class="is-size-5 publication-authors">
+                     <span class="author-block">
+                     <a href="https://sites.google.com/view/abhrachaudhuri/">Abhra Chaudhuri</a><sup>1</sup>,</span>
+                     <span class="author-block">
+                     <a href="https://ayankumarbhunia.github.io/">Ayan Kumar Bhunia</a><sup>2</sup>,</span>
+                     <span class="author-block">
+                     <a href="http://personal.ee.surrey.ac.uk/Personal/Y.Song/">Yi-Zhe Song</a><sup>2</sup></span>	  
+                     <span class="author-block">
+                        <a href="https://www.surrey.ac.uk/people/anjan-dutta">Anjan Dutta</a><sup>2</sup></span>	     
+                  </span>
+                  </div>
+                  <div class="is-size-5 publication-authors">
+                     <span class="author-block"><sup>1</sup>University of Exeter, UK</span>
+                     <span class="author-block">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                     <span class="author-block"><sup>2</sup>Institute for People-Centered AI, University of Surrey, UK</span>
+                  </div>
+                  <!--     <div class="column has-text-centered">
+                     <a href="as">ICLR 2023</a>
+                     </span>
+                     </div> -->
+                  <div class="column has-text-centered">
+                     <div class="publication-links">
+                        <!-- PDF Link. -->
+                        <span class="link-block">
+                        <a href="https://arxiv.org/abs/2303.07775"
+                           class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                        </a>
+                        </span>
+                        <!-- <span class="link-block">
+                        <a href="https://arxiv.org/abs/2303.11162"
+                           class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                        </a>
+                        </span> -->
+                        <!-- Video Link. -->
+                        <!-- <span class="link-block">
+                        <a href=""
+                           class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                        </span>
+                        <span>Video</span>
+                        </a>
+                        </span> -->
+                        <!-- Code Link. -->
+                        <span class="link-block">
+                        <a href="https://github.com/abhrac/data-free-sbir"
+                           class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                        <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                        </a>
+                        </span>
+                        <!-- Dataset Link. -->
+                        <!-- <span class="link-block">
+                           <a href=""
+                              class="external-link button is-normal is-rounded is-dark">
+                             <span class="icon">
+                                 <i class="far fa-images"></i>
+                             </span>
+                             <span>Data</span>
+                           </a> -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="hero teaser">
+      <div class="container is-max-desktop">
+         <div class="hero-body">
+            <center>
+               <img class="round" style="width:500px" src="./static/images/dfsbir/df_sbir_teaser-1.png"/>
+            </center>
+            <h2 class="subtitle has-text-centered">
+               <span class="dnerf"></span> Our proposed Data-Free setting for SBIR does not need
+               a real-world dataset of paired sketches and photos. Using only
+               independently trained, modality-specific classifiers, it can estimate
+               their train set distributions, as well as pair them at class-level for
+               training the sketch and photo encoders.
+            </h2>
+         </div>
+      </div>
+   </section>
+   <!-- <table border="1" id="cssTable">
+      <tr>
+          <td>Text</td>
+          <td>Text</td>
+      </tr>
+      </table> -->
+   <!-- 
+      <section class="hero is-light is-small">
+        <div class="hero-body">
+          <div class="container">
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item item-steve">
+                <video poster="" id="steve" autoplay controls muted loop height="100%">
+                  <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/steve.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-chair-tp">
+                <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
+                  <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/chair-tp.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-shiba">
+                <video poster="" id="shiba" autoplay controls muted loop height="100%">
+                  <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/shiba.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-fullbody">
+                <video poster="" id="fullbody" autoplay controls muted loop height="100%">
+                  <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/fullbody.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-blueshirt">
+                <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
+                  <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/blueshirt.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-mask">
+                <video poster="" id="mask" autoplay controls muted loop height="100%">
+                  <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/mask.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-coffee">
+                <video poster="" id="coffee" autoplay controls muted loop height="100%">
+                  <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/coffee.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-toby">
+                <video poster="" id="toby" autoplay controls muted loop height="100%">
+                  <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/toby2.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+       -->
+   <section class="section">
+   <div class="container is-max-desktop">
+   <!-- Abstract. -->
+   <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+         <h2 class="title is-3">Abstract</h2>
+         <div class="content has-text-justified">
+               Rising concerns about privacy and anonymity preservation of deep learning models have facilitated research
+               in data-free learning (DFL). For the first time, we identify that for data-scarce tasks like Sketch-Based Image Retrieval (SBIR), where the difficulty in acquiring paired photos and hand-drawn sketches limits data-dependent crossmodal learning algorithms, DFL can prove to be a much
+               more practical paradigm. We thus propose Data-Free (DF)-
+               SBIR, where, unlike existing DFL problems, pre-trained,
+               single-modality classification models have to be leveraged
+               to learn a cross-modal metric-space for retrieval without
+               access to any training data. The widespread availability of
+               pre-trained classification models, along with the difficulty
+               in acquiring paired photo-sketch datasets for SBIR justify
+               the practicality of this setting. We present a methodology
+               for DF-SBIR, which can leverage knowledge from models
+               independently trained to perform classification on photos
+               and sketches. We evaluate our model on the Sketchy, TUBerlin, and QuickDraw benchmarks, designing a variety
+               of baselines based on state-of-the-art DFL literature, and
+               observe that our method surpasses all of them by significant margins. Our method also achieves mAPs competitive
+               with data-dependent approaches, all the while requiring
+               no training data. Implementation is available at <a href="https://github.com/abhrac/data-free-sbir">https://github.com/abhrac/data-free-sbir</a>.
+            </p>
+         </div>
+      </div>
+   </div>
+   <!--/ Abstract. -->
+   <!-- Paper video. -->
+   <section class="section">
+      <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+         <div class="column is-four-fifths">
+            <h2 class="title is-3">Method</h2>
+            <div class="content has-text-justified">
+               </h2>
+               <center>
+                  <img src="./static/images/dfsbir/df_sbir_model-1.png" alt="" border=0 height=300 width=650></img></
+               </center>
+               <div class="subtitle has-text-centered">
+                  The photo and sketch estimators reconstruct the train set distributions
+                  of their corresponding classifiers, which could then be used to train the downstream encoders.
+                  The estimation process is ensured to have semantic consistency and completeness (through adversarial estimation) and class-level, instance-wise correspondence
+                  while maintaining modality boundaries.
+               </div>
+               &nbsp; 
+            </div>
+         </div>
+      </div>
+   </section>
+   
+
+   <section class="hero">
+   <div class="hero-body">
+   <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+         <div class="column is-four-fifths">
+            <h2 class="title is-3">Results</h2>
+            <div class="content has-text-justified">
+               <center>
+                  <img src="static/images/dfsbir/qualitative_results-1.png" alt="this slowpoke moves" border=0 height=1000 width=2000/>
+               </center>
+               <div class="subtitle has-text-centered">
+                  Data-free photo and sketch reconstructions of the Sketchy and TU-Berlin datasets produced by our estimator networks.
+               </div>
+			   <br>
+			   <br>			
+               <center>
+                  <img src="static/images/dfsbir/qualitative_ablation_class_alignment-1.png" alt="this slowpoke moves" border=0 height=200 width=600/>
+               </center>
+               <div class="subtitle has-text-centered">
+                  Photo and sketch reconstructions without (left) and with (right) the Class-Alignment loss. Each column corresponds to a
+                  single reconstruction step using a common input noise vector fed in to the photo and sketch estimators respectively.
+               </div>
+			   <br>
+			   <br>
+               <center>
+                  <img src="static/images/dfsbir/qualitative_ablation_modality_guidance-1.png" alt="this slowpoke moves" border=0 height=200 width=400/>
+               </center>
+               <div class="subtitle has-text-centered">
+                  Reconstructed photos and sketches of an Apple in the presence and absence of the Modality Guidance loss.
+               </div>
+			   <br>
+			   <br>
+			   <center>
+                  <img src="static/images/dfsbir/qualitative_ablation_adversarial_estimation-1.png" alt="this slowpoke moves" border=0 height=200 width=500/>
+               </center>
+               <div class="subtitle has-text-centered">
+                  Reconstructions obtained by using Metric-Agnostic Adversarial Estimation, with respective
+                  class-scores assigned by the teacher and the student.
+               </div>
+			   <br>
+			   <br>
+			   <center>
+                  <img src="static/images/dfsbir/partial_overlap_web.png" alt="this slowpoke moves" border=0 height=400 width=800/>
+               </center>
+               <div class="subtitle has-text-centered">
+                  DF-SBIR performance of our model when the classifiers (teachers) are trained on only partially overlapping sets of classes.
+               </div>
+			   <br>
+			   <br>
+            <center>
+               <img src="static/images/dfsbir/reconstruction_quality-1.png" alt="this slowpoke moves" border=0 height=400 width=800/>
+            </center>
+            <div class="subtitle has-text-centered">
+               Variation in mAP@all, as well as reconstruction quality across epochs.
+            </div>
+         <br>
+         <br>
+         </div>
+      </div>
+   </div>
+   <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+         <h2 class="title">BibTeX</h2>
+         <pre><code>@article{chaudhuri2023dfsbir,
+  title={{Data-Free Sketch-Based Image Retrieval}},
+  author={Abhra Chaudhuri and Ayan Kumar Bhunia and Yi-Zhe Song and Anjan Dutta},
+  booktitle={CVPR},
+  year={2023}
+}</code></pre>
+      </div>
+   </section>
+   <script>
+      const viewers = document.querySelectorAll(".image-compare");
+      viewers.forEach((element) => {
+          let view = new ImageCompare(element, {
+              hoverStart: true,
+              addCircle: true
+          }).mount();
+      });
+      
+      $(document).ready(function () {
+          var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+              lineNumbers: false,
+              lineWrapping: true,
+              readOnly: true
+          });
+          $(function () {
+              $('[data-toggle="tooltip"]').tooltip()
+          })
+      });
+   </script>
+   <br>
+   <p style="text-align:center"> Last updated: 06 April 2023 | Template Credit: <a href="https://nerfies.github.io/"> Nerfies</a></p>
+   </body>
+</html>
